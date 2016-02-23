@@ -1,0 +1,24 @@
+$font-stack: Helvetica, sans-serif;
+$brand-color-dark: #108146;
+$brand-color-light: #8CC875;
+
+@media only screen and (min-width : 320px) {
+
+}
+
+//Extra Small Devices, Phones
+@media only screen and (min-width : 480px) {
+
+}
+
+//Small Devices, Tablets
+@media only screen and (min-width : 768px) {
+
+}
+
+
+body {
+  font: 100% $font-stack;
+  color: black;
+  background-color: #ccc;
+}
