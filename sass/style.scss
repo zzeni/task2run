@@ -1,24 +1,108 @@
-$font-stack: Helvetica, sans-serif;
-$brand-color-dark: #108146;
-$brand-color-light: #8CC875;
-
-@media only screen and (min-width : 320px) {
-
+// import Google font
+@import url(https://fonts.googleapis.com/css?family=Hind+Vadodara:300,400,600);
+//override boostrap variables
+@import "_variables";
+// include bootstrap styles
+@import "../vendor/bootstrap-sass-3.3.6/assets/stylesheets/_bootstrap.scss";
+// Custom, iPhone Retina
+@media only screen and (min-width: 320px) {
+  .container {
+    width: 100%;
+  }
 }
 
-//Extra Small Devices, Phones
-@media only screen and (min-width : 480px) {
-
+// Extra Small Devices, Phones
+@media only screen and (min-width: 480px) {
+  .container {
+    width: 100%;
+  }
 }
 
-//Small Devices, Tablets
-@media only screen and (min-width : 768px) {
-
+// Small Devices, Tablets
+@media only screen and (min-width: 768px) {
+  .container {
+    width: 480px;
+    margin: 0 auto;
+  }
 }
 
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color: $gray-base;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: $gray-base;
+  opacity: 1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: $gray-base;
+  opacity: 1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: $gray-base;
+}
+:placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+  color: $gray-base;
+}
 
-body {
-  font: 100% $font-stack;
-  color: black;
-  background-color: #ccc;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  color: $brand-primary;
+  font-weight: $extra-bold-font-weight;
+}
+
+.strong {
+  font-weight: $extra-bold-font-weight;
+}
+
+.panel-primary {
+  border: 0;
+  border-radius: 0;
+  box-shadow: $brand-primary 5px 5px 10px;
+  .panel-heading {
+    border-radius: 0;
+    .panel-title {
+      color: $heading-font-color;
+      font-size: 1.8em;
+      font-weight: $regular-font-weight;
+      line-height: 1em;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+  }
+}
+
+.btn {
+  border: 0;
+  box-shadow: $brand-primary 5px 5px 10px;
+  border-radius: 40px;
+  font-size: 1.8em;
+  &:hover {
+    background-color: $btn-bg;
+    color: $brand-primary;
+  }
+}
+
+form button[type=submit] {
+  width: 100%;
+}
+
+form input.form-control {
+  padding: 0 5px;
+  margin: 10px 0;
+  background-color: $body-bg;
+  border: 1px $gray solid;
+  border-radius: 0;
+//  color: $gray-base;
+  font-size: 1.2em;
+  line-height: 1.8em;
 }
