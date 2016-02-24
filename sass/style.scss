@@ -4,27 +4,6 @@
 @import "_variables";
 // include bootstrap styles
 @import "../vendor/bootstrap-sass-3.3.6/assets/stylesheets/_bootstrap.scss";
-// Custom, iPhone Retina
-@media only screen and (min-width: 320px) {
-  .container {
-    width: 100%;
-  }
-}
-
-// Extra Small Devices, Phones
-@media only screen and (min-width: 480px) {
-  .container {
-    width: 100%;
-  }
-}
-
-// Small Devices, Tablets
-@media only screen and (min-width: 768px) {
-  .container {
-    width: 480px;
-    margin: 0 auto;
-  }
-}
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
   color: $gray-base;
@@ -42,6 +21,10 @@
 }
 :placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
   color: $gray-base;
+}
+
+body {
+  font-size: 14px;
 }
 
 h1,
@@ -64,18 +47,27 @@ h6,
   font-weight: $extra-bold-font-weight;
 }
 
+.container {
+  width: 100%;
+}
+
+.screen-3 {
+  margin-top: 40px;
+}
+
 .panel-primary {
   border: 0;
   border-radius: 0;
   box-shadow: $brand-primary 5px 5px 10px;
   .panel-heading {
     border-radius: 0;
+
     .panel-title {
       color: $heading-font-color;
-      font-size: 1.8em;
+      font-size: 1.6em;
       font-weight: $regular-font-weight;
       line-height: 1em;
-      letter-spacing: 1px;
+      letter-spacing: 0;
       text-align: center;
     }
   }
@@ -85,10 +77,44 @@ h6,
   border: 0;
   box-shadow: $brand-primary 5px 5px 10px;
   border-radius: 40px;
-  font-size: 1.8em;
+  font-size: 1.6em;
   &:hover {
     background-color: $btn-bg;
     color: $brand-primary;
+  }
+}
+.pull-center {
+  margin: 0 auto;
+}
+.navbar {
+  height: 35px;
+  background-color: $brand-primary;
+  margin-bottom: 0;
+  border-radius: 0;
+  margin-top: 45px;
+
+  ul.nav-pills {
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    bottom: 15px;
+    li {
+      margin: 0;
+      padding: 0 5px;
+      width: 33%;
+      a {
+        background-color: $brand-secondary;
+        border-radius: 100%;
+        width: 60px;
+        height: 60px;
+        padding: 10px;
+        .icon {
+          width: 40px;
+          height: 40px;
+          max-width: 100%;
+        }
+      }
+    }
   }
 }
 
@@ -102,7 +128,50 @@ form input.form-control {
   background-color: $body-bg;
   border: 1px $gray solid;
   border-radius: 0;
-//  color: $gray-base;
   font-size: 1.2em;
-  line-height: 1.8em;
+}
+
+/* Media Quieries */
+
+// Custom, iPhone Retina
+@media only screen and (min-width: 320px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+// Extra Small Devices, Phones
+@media only screen and (min-width: 480px) {
+  body {
+    font-size: 18px;
+  }
+  .container {
+    width: 480px;
+    margin: 0 auto;
+  }
+  .navbar ul.nav-pills li {
+    padding: 0 15px;
+    a {
+      width: 80px;
+      height: 80px;
+      padding: 15px;
+      .icon {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+  .panel-primary .panel-heading .panel-title {
+    letter-spacing: 1px;
+  }
+  .screen-3 {
+    margin-top: 100px;
+  }
+}
+
+// Small Devices, Tablets
+@media only screen and (min-width: 768px) {
+  .screen-3 {
+    margin-top: 150px;
+  }
 }
