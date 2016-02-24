@@ -41,6 +41,9 @@ h6,
 .h6 {
   color: $brand-primary;
   font-weight: $extra-bold-font-weight;
+  &.light {
+    color: $heading-font-color;
+  }
 }
 
 .strong {
@@ -55,7 +58,7 @@ h6,
   margin-top: 40px;
 }
 
-.panel-primary {
+.panel {
   border: 0;
   border-radius: 0;
   box-shadow: $brand-primary 5px 5px 10px;
@@ -63,12 +66,38 @@ h6,
     border-radius: 0;
 
     .panel-title {
-      color: $heading-font-color;
       font-size: 1.6em;
       font-weight: $regular-font-weight;
       line-height: 1em;
       letter-spacing: 0;
       text-align: center;
+    }
+  }
+
+  &.panel-secondary {
+    margin-left: 15px;
+    margin-right: 5px;
+
+    .panel-heading {
+      position: relative;
+      background-color: $brand-secondary;
+      height: 50px;
+
+      .heading-icon {
+        position: absolute;
+        left: -15px;
+        top: 0;
+        z-index: 9;
+        background-color: $brand-primary;
+        border-radius: 100%;
+        width: 50px;
+        height: 50px;
+        padding: 8px;
+        .icon {
+          height: 34px;
+          width: 34px;
+        }
+      }
     }
   }
 }
@@ -91,8 +120,27 @@ h6,
   background-color: $brand-primary;
   margin-bottom: 0;
   border-radius: 0;
-  margin-top: 45px;
 
+  .icon {
+    height: 28px;
+  }
+  h3 {
+    padding: 0;
+    margin: 8px;
+  }
+  .nav-btn {
+    position: absolute;
+    top: 0;
+    padding: 8px 5px;
+
+    &.nav-btn-right {
+      right: 0;
+    }
+
+    &.nav-btn-left {
+      left: 0;
+    }
+  }
   ul.nav-pills {
     width: 100%;
     position: absolute;
@@ -116,19 +164,47 @@ h6,
       }
     }
   }
+
+  &.navbar-secondary {
+    background-color: $brand-secondary;
+    color: $gray-base;
+    font-size: 1.4em;
+    padding: 12px 5px;
+    height: 54px;
+    border-bottom: $gray-darker 5px solid;
+    .icon {
+      height: 32px;
+    }
+  }
+}
+.screen-3 .navber {
+  margin-top: 45px;
 }
 
-form button[type=submit] {
-  width: 100%;
+
+form {
+  button[type=submit] {
+    width: 100%;
+  }
+  input.form-control {
+    padding: 0 5px;
+    margin: 10px 0;
+    background-color: $body-bg;
+    border: 1px $gray solid;
+    border-radius: 0;
+    font-size: 1.1em;
+    &[type=color] {
+      padding: 0;
+    }
+  }
+  div[class^=col-] {
+    padding: 0;
+  }
 }
 
-form input.form-control {
-  padding: 0 5px;
-  margin: 10px 0;
-  background-color: $body-bg;
-  border: 1px $gray solid;
-  border-radius: 0;
-  font-size: 1.2em;
+.info-text {
+  margin: 10px 10px 20px 20px;
+  font-size:1.1em;
 }
 
 /* Media Quieries */
@@ -149,23 +225,62 @@ form input.form-control {
     width: 480px;
     margin: 0 auto;
   }
-  .navbar ul.nav-pills li {
-    padding: 0 15px;
-    a {
-      width: 80px;
-      height: 80px;
-      padding: 15px;
+  .navbar {
+    ul.nav-pills li {
+      padding: 0 15px;
+      a {
+        width: 80px;
+        height: 80px;
+        padding: 15px;
+        .icon {
+          width: 50px;
+          height: 50px;
+        }
+      }
+    }
+    &.navbar-secondary {
+      font-size: 1.6em;
+      padding: 15px 5px;
+      height: 68px;
       .icon {
-        width: 50px;
-        height: 50px;
+        height: 40px;
       }
     }
   }
-  .panel-primary .panel-heading .panel-title {
-    letter-spacing: 1px;
+
+  .panel {
+    .panel-heading .panel-title {
+      letter-spacing: 1px;
+    }
+    &.panel-secondary {
+      margin-left: 25px;
+      margin-right: 10px;
+
+      .panel-heading {
+        height: 60px;
+
+        .heading-icon {
+          left: -25px;
+          width: 60px;
+          height: 60px;
+          padding: 10px;
+          .icon {
+            height: 40px;
+            width: 40px;
+          }
+        }
+      }
+    }
   }
   .screen-3 {
     margin-top: 100px;
+  }
+  .info-text {
+    margin: 15px 15px 30px 30px;
+    font-size:1.2em;
+  }
+  form input.form-control {
+    font-size: 1.2em;
   }
 }
 
